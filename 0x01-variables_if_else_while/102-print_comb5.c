@@ -22,8 +22,14 @@ int main(void)
 				putchar(' ');
 				putchar('0' + (num2 / 10));
 				putchar('0' + (num2 % 10));
-				putchar(',');
-				putchar(' ');
+				if (num1 / 10 == 9 && num1 % 10 == 8 && num2 / 10 == 9 && num2 % 10 == 9)
+				{
+					continue;
+				} else
+				{
+					putchar(',');
+					putchar(' ');
+				}
 			}
 		}
 	}

@@ -1,13 +1,8 @@
-#include <stdio.h>
 #include "main.h"
 
 /**
- * main - Entry point
- *
- * Print alphabets using _putchar
+ * print_alphabet - prints all alphabets in lowercase.
  */
-
-void print_alphabet(void);
 
 void print_alphabet(void)
 {

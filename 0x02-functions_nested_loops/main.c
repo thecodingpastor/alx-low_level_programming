@@ -7,6 +7,6 @@
  */
 int main(void)
 {
-	print_alphabet_x10();
+	printf("%d", _islower('g'));
 	return (0);
 }

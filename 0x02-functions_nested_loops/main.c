@@ -7,6 +7,6 @@
  */
 int main(void)
 {
-	printf("%d", _islower('g'));
+	_islower('g');
 	return (0);
 }

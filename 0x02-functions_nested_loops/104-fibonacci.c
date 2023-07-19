@@ -9,13 +9,13 @@
 int main(void)
 {
 	int i;
-	unsigned long int t1, t2, nextTerm;
+	unsigned long long int t1, t2, nextTerm;
 
 	t1 = 1;
 	t2 = 2;
 	nextTerm = t1 + t2;
 
-	printf("%lu, %lu, %lu, ", t1, t2, nextTerm);
+	printf("%llu, %llu, %llu, ", t1, t2, nextTerm);
 
 	for (i = 4; i <= 98; i++)
 	{
@@ -25,10 +25,10 @@ int main(void)
 
 		if (i != 98)
 		{
-			printf("%lu, ", nextTerm);
+			printf("%llu, ", nextTerm);
 		} else
 		{
-			printf("%lu", nextTerm);
+			printf("%llu", nextTerm);
 		}
 	}
 	printf("\n");

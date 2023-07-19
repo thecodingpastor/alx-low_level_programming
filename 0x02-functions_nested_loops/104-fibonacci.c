@@ -17,12 +17,19 @@ int main(void)
 
 	printf("%lu, %lu, %lu, ", t1, t2, nextTerm);
 
-	for (i = 5; i <= 98; i++)
+	for (i = 4; i <= 98; i++)
 	{
 		t1 = t2;
 		t2 = nextTerm;
 		nextTerm = t1 + t2;
-		printf("%lu, ", nextTerm);
+
+		if (i != 98)
+		{
+			printf("%lu, ", nextTerm);
+		} else
+		{
+			printf("%lu", nextTerm);
+		}
 	}
 	printf("\n");
 	return (0);

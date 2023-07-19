@@ -15,9 +15,9 @@ int main(void)
 	t2 = 2;
 	nextTerm = t1 + t2;
 
-	printf("%ld, %ld, ", t1, t2);
+	printf("%ld, %ld, %ld, ", t1, t2, nextTerm);
 
-	for (i = 3; i <= 98; i++)
+	for (i = 4; i <= 98; i++)
 	{
 		t1 = t2;
 		t2 = nextTerm;

@@ -8,13 +8,14 @@
 
 int main(void)
 {
-	int i, t1, t2, nextTerm;
+	int i;
+	long int t1, t2, nextTerm;
 
 	t1 = 1;
 	t2 = 2;
 	nextTerm = t1 + t2;
 
-	printf("%d, %d, ", t1, t2);
+	printf("%ld, %ld, ", t1, t2);
 
 	for (i = 3; i <= 98; i++)
 	{
@@ -24,10 +25,10 @@ int main(void)
 
 		if (i != 98)
 		{
-			printf("%d, ", nextTerm);
+			printf("%ld, ", nextTerm);
 		} else
 		{
-			printf("%d", nextTerm);
+			printf("%ld", nextTerm);
 		}
 	}
 	printf("\n");

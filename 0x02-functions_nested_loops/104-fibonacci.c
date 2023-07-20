@@ -20,7 +20,7 @@ int main(void)
 	while (count < 98)
 	{
 		nextTerm = t1 + t2;
-		if (count == 98)
+		if (count == 97)
 		{
 			printf("%lu", nextTerm);
 		} else

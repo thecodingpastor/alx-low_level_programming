@@ -8,28 +8,28 @@
 
 int main(void)
 {
-	int i;
+	int count;
 	unsigned long int t1, t2, nextTerm;
 
 	t1 = 1;
 	t2 = 2;
-	nextTerm = t1 + t2;
+	count = 2;
 
-	printf("%lu, %lu, %lu, ", t1, t2, nextTerm);
+	printf("%lu, %lu, ", t1, t2);
 
-	for (i = 4; i <= 98; i++)
+	while (count < 98)
 	{
-		t1 = t2;
-		t2 = nextTerm;
 		nextTerm = t1 + t2;
-
-		if (i != 98)
-		{
-			printf("%lu, ", nextTerm);
-		} else
+		if (count == 98)
 		{
 			printf("%lu", nextTerm);
+		} else
+		{
+			printf("%lu, ", nextTerm);
 		}
+		t1 = t2;
+		t2 = nextTerm;
+		count++;
 	}
 	printf("\n");
 	return (0);

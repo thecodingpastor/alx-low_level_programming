@@ -1,8 +1,8 @@
-#ifndef main_h
-#define main_h
+#ifndef MAIN_H
+#define MAIN_H
 
 int _putchar(char);
-int _isupper(int c);
+int _isupper(char c);
 int _isdigit(int c);
 int mul(int a, int b);
 void print_numbers(void);

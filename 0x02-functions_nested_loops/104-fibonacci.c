@@ -12,7 +12,7 @@ int main(void)
 	unsigned long int t1, t2, nextTerm;
 
 	t1 = 1;
-	t2 = 2;
+	t2 = 1;
 	nextTerm = t1 + t2;
 
 	printf("%lu, %lu, %lu, ", t1, t2, nextTerm);

@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <ctype.h>
+
 /**
  * _atoi - changes the looking nums to nums
  * @str: string to be changed
@@ -52,7 +54,7 @@ int main(int argc, char *argv[])
 	{
 		for (i = 1; i < argc; i++)
 		{
-			if (_atoi(argv[i]) <= 0)
+			if (_atoi(argv[i]) < 0)
 			{
 				printf("Error\n");
 				return (1);

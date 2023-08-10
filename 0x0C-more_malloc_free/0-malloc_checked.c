@@ -2,9 +2,9 @@
 #include "main.h"
 
 /**
- * malloc_checked - a function that allocates memory using malloc
+ * *malloc_checked - a function that allocates memory using malloc
  *
- * @b: arg
+ * @b: argument
  * Return: a void pointer
  */
 
@@ -16,7 +16,7 @@ void *malloc_checked(unsigned int b)
 
 	if (var == NULL)
 	{
-		exit (98);
+		exit(98);
 	}
 	return (var);
 }

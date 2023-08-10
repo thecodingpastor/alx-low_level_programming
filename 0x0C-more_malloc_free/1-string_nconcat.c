@@ -23,20 +23,24 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		secLen++;
 
 	if (n < secLen)
-	{
 		var = malloc(sizeof(char) * (firstLen + n + 1));
-	} else
-	{
+	else
 		var = malloc(sizeof(char) * (firstLen + secLen + 1));
-	}
-	if (var == NULL)
+
+	if (!var)
 		return (NULL);
 	while (i < firstLen)
 	{
 		var[i] = s1[i];
 		i++;
 	}
-	while (n < secLen && i < (firstLen + secLen))
+
+	while (n < secLen && i < (firstLen + n))
+	{
+		var[i] = s2[j];
+		i++, j++;
+	}
+	while (n >= secLen && i < (firstLen + secLen))
 	{
 		var[i] = s2[j];
 		i++, j++;

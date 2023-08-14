@@ -4,8 +4,10 @@
 /**
  * struct dog - describes a dog
  * @name: arg 1
- * @float: arg 2
+ * @age: arg 2
  * @owner: arg 3
+ *
+ * Description: defines a struct with three items
  */
 
 struct dog

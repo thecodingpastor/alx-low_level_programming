@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "dog.h"
 
 /**
@@ -10,6 +9,7 @@
  * @owner: arg 4
  *
  * Description: function that initializes a struct
+ * which takes three args
  */
 
 void init_dog(struct dog *d, char *name, float age, char *owner)

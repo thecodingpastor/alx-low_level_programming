@@ -8,6 +8,8 @@
  * @name: arg 2
  * @age: arg 3
  * @owner: arg 4
+ *
+ * Description: function that initializes a struct
  */
 
 void init_dog(struct dog *d, char *name, float age, char *owner)

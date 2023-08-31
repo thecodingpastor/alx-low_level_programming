@@ -14,17 +14,17 @@ size_t free_listint_safe(listint_t **h)
 	if (!h || !*h)
 		return (0);
 
-	for (i = 0; *h != NULL; i++)
+	while (*h != NULL)
 	{
 		difference = *h - (*h)->next;
 		if (difference > 0)
 		{
 			tmp = (*h)->next;
-			free(*h), *h = tmp;
+			free(*h), *h = tmp, i++;
 		}
 		else
 		{
-			free(*h), *h = NULL;
+			free(*h), *h = NULL, i++;
 			break;
 		}
 	}

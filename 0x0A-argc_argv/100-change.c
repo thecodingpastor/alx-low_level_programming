@@ -11,7 +11,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int num, j, result;
+	int num, a, result;
 	int coins[] = {25, 10, 5, 2, 1};
 
 	if (argc != 2)
@@ -29,12 +29,12 @@ int main(int argc, char *argv[])
 		return (0);
 	}
 
-	for (j = 0; j < 5 && num >= 0; j++)
+	for (a = 0; a < 5 && num >= 0; a++)
 	{
-		while (num >= coins[j])
+		while (num >= coins[a])
 		{
 			result++;
-			num -= coins[j];
+			num = num - coins[a];
 		}
 	}
 

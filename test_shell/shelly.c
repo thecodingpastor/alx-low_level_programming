@@ -1,38 +1,27 @@
 #include "shelly.h"
+char **ms_env;
 /**
- * main - mimics unix shell
- * @argc: number of args passed in the command line
- * @argv: array of strings of args
+ * main - mimics simple shell
+ * @argc: arg count
+ * @envp: envp
  * Return: 0 or -1
  */
-int main(int argc, char **argv)
+int main(int argc, char *envp[])
 {
-	(void)argc;
-	(void)argv;
+	char input[MAX_INPUT_SIZE];
 
-	ssize_t ms_numCharsRead;
-	char *ms_linePointer = NULL, *ms_linePointerCP = NULL, *ms_token = NULL;
-	size_t ms_lineSize = 0;
-	int ms_numOfTokens = 0, i, j;
+	ms_env = envp;
 
 	while (true)
 	{
 		prompt();
-		ms_numCharsRead = getline(&ms_linePointer, &ms_lineSize, stdin);
+		if (fgets(input, sizeof(input), stdin) == NULL)
+			printString("\n"), exit(2);
+		input[_strlen(input) - 1] = '\0';
 
-		if (ms_numCharsRead == -1)
-		{
-			handleError("\nSee ya later...");
-			return (-1);
-		}
-		ms_token = strtok(ms_linePointer, " \n");
-
-		while (ms_token != NULL)
-		{
-			printString(ms_token), printString("\n");
-			ms_numOfTokens++, ms_token = strtok(NULL, " \n");
-		}
+		if (_strlen(input) == 0)
+			continue;
+		execCommand(input, ms_env);
 	}
-	free(ms_linePointer);
 	return (0);
 }

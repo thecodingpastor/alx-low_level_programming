@@ -1,6 +1,7 @@
 #include "shelly.h"
+
 /**
- * prompt - prompts a user to enter command in shelly
+ * prompt - displays the shelly prompter
  */
 void prompt(void)
 {

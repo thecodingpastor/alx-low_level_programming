@@ -17,6 +17,6 @@ int wildcmp(char *one, char *two)
 	else if (*two == '*')
 		return (wildcmp(one + 1, two) || wildcmp(one, two + 1));
 	else if (*one == *two)
-		return (wildcmp(one + 1, two + 1))
+		return (wildcmp(one + 1, two + 1));
 	return (0);
 }

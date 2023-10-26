@@ -32,5 +32,6 @@ void greater2Mode(int argc, char *argv[], int i);
 int _strlen(char *s);
 int _strcmp(char *s1, char *s2);
 char *_strtok(char **str, char delim);
-
+int _atoi(char *str);
+char *_strcat(char *dest, char *src);
 #endif

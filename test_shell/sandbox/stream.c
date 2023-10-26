@@ -774,7 +774,11 @@ int main(int argc, char *argv[], char *envp[])
         prompt();
         read = _getline(&ms_linePointer, &ms_lineSize, stdin);
         if (read == -1)
-            free(ms_linePointer), printString("\n"), exit(2);
+        {
+            free(ms_linePointer);
+            printString("\n");
+            exit(2);
+        }
         ms_linePointer[read - 1] = '\0';
 
         if (_strlen(ms_linePointer) == 0)
@@ -782,6 +786,13 @@ int main(int argc, char *argv[], char *envp[])
 
         char *input_argv[64];
         size_t input_argc = splitToTokens(ms_linePointer, input_argv, " ");
+
+        // Check if the user wants to exit the shell
+        if (_strcmp(input_argv[0], "exit") == 0)
+        {
+            free(ms_linePointer);
+            exit(0);
+        }
 
         // Check if the command contains '/'
         if (_strchr(input_argv[0], '/') != NULL)
@@ -796,6 +807,7 @@ int main(int argc, char *argv[], char *envp[])
         }
     }
 
+    // The loop should never reach here, but free resources just in case
     free(ms_linePointer);
     return 0;
 }

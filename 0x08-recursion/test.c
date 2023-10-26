@@ -1,22 +1,38 @@
-#include "main.h"
-#include <stdio.h>
+#include  "main.h"
 
-int _pow(int x, int y)
+int handle_recursion(int num, int i)
 {
-	if (y < 0)
+	if (i * i > num)
 		return (-1);
-	if (y == 0)
-		return (1);
-	return (x * _pow(x, y - 1));
+	else if (i * i == num)
+		return (i);
+	return handle_recursion(num, i + 1);
+}
+
+int _sqrt_recursion(int n)
+{
+        if (n < 0)
+        {
+                return (-1);
+        }
+        return (handle_recursion(n, 0));
 }
 
 int main(void)
 {
-	int num = _pow(7,2);
-	int num2 = _pow(1000, 0);
-	int num3 = _pow(4,4);
-int num4 = _pow(5, -4);
+        int r;
 
-	printf("%d %d %d %d\n", num, num2, num3, num4);
-	return (0);
+        r = _sqrt_recursion(1);
+        printf("%d\n", r);
+        r = _sqrt_recursion(1024);
+        printf("%d\n", r);
+        r = _sqrt_recursion(16);
+        printf("%d\n", r);
+        r = _sqrt_recursion(17);
+        printf("%d\n", r);
+        r = _sqrt_recursion(25);
+        printf("%d\n", r);
+        r = _sqrt_recursion(-1);
+        printf("%d\n", r);
+        return (0);
 }

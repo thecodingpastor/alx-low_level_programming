@@ -9,7 +9,8 @@
 int main(void)
 {
     int r;
-
+	r = wildcmp("holberton.c", "*h*o*l*b*e*r*t*o*n*.*c*");
+	printf("%d\n",  r);
     r = wildcmp("main.c", "*.c");
     printf("%d\n", r);
     r = wildcmp("main.c", "m*a*i*n*.*c*");

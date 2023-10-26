@@ -1,12 +1,15 @@
-#include <stdio.h>
+#include "main.h"
 
-void factorial (int num)
+void puts_recursion(char *str)
 {
-	printf("%d\n", num);
+	if (*str)
+	{
+		puts_recursion(str + 1), _putchar(*str);
+	}
 }
+
 int main(void)
 {
-	factorial(4);
-
+	puts_recursion("Mike");
 	return (0);
 }

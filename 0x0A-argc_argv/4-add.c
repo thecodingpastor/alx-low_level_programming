@@ -25,10 +25,11 @@ int _atoi(char *str)
 	{
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
+	while (str[i] != '\0')
 	{
-		result = result * 10 + (str[i] - '0');
-		i++;
+		if (!isdigit(str[i]))
+			return (-1);
+		result = result * 10 + (str[i] - '0'), i++;
 	}
 	return (result * sign);
 }
@@ -54,7 +55,7 @@ int main(int argc, char *argv[])
 	{
 		for (i = 1; i < argc; i++)
 		{
-			if (_atoi(argv[i]) < 0)
+			if (_atoi(argv[i]) == -1)
 			{
 				printf("Error\n");
 				return (1);

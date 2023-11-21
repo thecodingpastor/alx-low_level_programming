@@ -1,0 +1,44 @@
+#include "lists.h"
+/**
+ * count - Counts the number of unique nodes
+ * @head: A pointer to the head of the listint_t to check.
+ * Return: If the list is not looped - 0.
+ * Else - the number of unique nodes in the list.
+ */
+size_t count(const listint_t *head)
+{
+	const listint_t *one, *two;
+	size_t numNodes = 1;
+
+	if (head == NULL || head->next == NULL)
+		return (0);
+
+	one = head->next;
+	two = (head->next)->next;
+
+	while (two)
+	{
+		if (one == two)
+		{
+			one = head;
+			while (one != two)
+			{
+				numNodes++;
+				one = one->next;
+				two = two->next;
+			}
+			one = one->next;
+			while (one != two)
+			{
+				numNodes++;
+				one = one->next;
+			}
+
+			return (numNodes);
+		}
+
+		one = one->next;
+		two = (two->next)->next;
+	}
+	return (0);
+}
